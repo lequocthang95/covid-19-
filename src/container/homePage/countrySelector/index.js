@@ -6,6 +6,7 @@ const useStyles = makeStyles((theme) => ({
         margin: `${theme.spacing(3)}px 0`,
     }
 }))
+
 export default function CountrySelector({value, handleOnChange, countries}) {
     const styles = useStyles()
     return (
@@ -18,9 +19,9 @@ export default function CountrySelector({value, handleOnChange, countries}) {
                     name: 'country',
                     id: 'country-selector'
                 }}>
-                {countries.map(({ Country, ISO2 }) => (
-                    <option key={ISO2} value={ISO2.toLowerCase()}>
-                      {Country}
+                {countries.map((Country, index) => (
+                    <option key={index} >
+                      {Country.country}
                     </option>
                   ))}
             </NativeSelect>
